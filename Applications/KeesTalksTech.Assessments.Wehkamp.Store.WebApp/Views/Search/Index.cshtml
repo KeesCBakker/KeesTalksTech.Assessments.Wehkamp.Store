@@ -1,0 +1,24 @@
+﻿@model IEnumerable<KeesTalksTech.Assessments.Wehkamp.Store.StoreApi.Models.ProductModel>
+
+@{
+    ViewData["Title"] = $"Take a look at these '{ViewBag.Query}' photo's";
+}
+
+
+@section PageHeader {
+    <div class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="text-center">Take a look at these '@ViewBag.Query' photo's!</h1>
+                </div>
+            </div>
+
+            @Html.Partial("_SearchForm", (string)ViewBag.Query)
+
+        </div>
+    </div>
+}
+
+@* Render the list using the product list *@
+@Html.Partial("../Products/_List", Model)

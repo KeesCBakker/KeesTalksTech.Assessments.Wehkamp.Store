@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Utilities\KeesTalksTech.Assessments.Wehkamp.Store.Utilities\KeesTalksTech.Assessments.Wehkamp.Store.Utilities.csproj" />
+    <ProjectReference Include="..\KeesTalksTech.Assessments.Wehkamp.Store.Core\KeesTalksTech.Assessments.Wehkamp.Store.Core.csproj" />
+  </ItemGroup>
+
+</Project>

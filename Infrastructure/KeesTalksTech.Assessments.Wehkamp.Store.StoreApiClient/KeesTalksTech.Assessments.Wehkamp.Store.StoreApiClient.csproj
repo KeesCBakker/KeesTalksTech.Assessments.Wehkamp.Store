@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\..\Applications\KeesTalksTech.Assessments.Wehkamp.Store.StoreApi\Models\BasketItemModel.cs" Link="Shopping\Models\BasketItemModel.cs" />
+    <Compile Include="..\..\Applications\KeesTalksTech.Assessments.Wehkamp.Store.StoreApi\Models\BasketModel.cs" Link="Shopping\Models\BasketModel.cs" />
+    <Compile Include="..\..\Applications\KeesTalksTech.Assessments.Wehkamp.Store.StoreApi\Models\PriceModel.cs" Link="Catalog\Models\PriceModel.cs" />
+    <Compile Include="..\..\Applications\KeesTalksTech.Assessments.Wehkamp.Store.StoreApi\Models\ProductModel.cs" Link="Catalog\Models\ProductModel.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Catalog\Models\" />
+    <Folder Include="Shopping\Models\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="RestSharp.NetCore" Version="105.2.3" />
+  </ItemGroup>
+
+</Project>

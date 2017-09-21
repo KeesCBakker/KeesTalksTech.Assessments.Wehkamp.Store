@@ -1,0 +1,85 @@
+﻿@model KeesTalksTech.Assessments.Wehkamp.Store.StoreApi.Models.BasketModel
+
+@{
+    ViewData["Title"] = "Review your cart";
+
+    var sub = Model.Contents.Sum(c => c.Content.Price.Amount);
+    var vat = sub * 0.21;
+    var total = sub + vat;
+}
+
+
+@section PageHeader {
+<div class="header">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="text-center">Review your cart</h1>
+            </div>
+        </div>
+    </div>
+</div>
+}
+
+@foreach (var item in Model.Contents)
+{
+    <div class="row">
+        <div class="col-lg-2">
+            <div class="thumbnail">
+                <a asp-controller="Products" asp-action="Detail" asp-route-id="@item.Content.Id">
+                    <img src="@item.Content.ThumbnailUrl" style="max-width:100%;" data-holder-rendered="true">
+                </a>
+            </div>
+        </div>
+        <div class="col-lg-7">@item.Content.Name</div>
+        <div class="col-lg-2 text-right">&euro;@item.Content.Price.Amount.ToString("#.00")</div>
+        <div class="col-lg-1">
+            <form asp-controller="Basket" asp-action="RemoveFromBasket" asp-route-basketItemId="@item.Id" method="post">
+                <button type="submit" class="btn btn-default btn-sm">
+                    <span class="glyphicon glyphicon-remove"></span>
+                </button>
+            </form>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <hr />
+        </div>
+    </div>
+}
+
+<div class="pricing">
+    <div class="row">
+        <div class="col-lg-9 text-right">Sub:</div>
+        <div class="col-lg-2 text-right">
+            &euro;@sub.ToString("#.00")
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+    <div class="row">
+        <div class="col-lg-9 text-right">VAT (21%):</div>
+        <div class="col-lg-2 text-right">
+            &euro;@vat.ToString("#.00")
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+    <div class="row">
+        <div class="col-lg-9 text-right">Total:</div>
+        <div class="col-lg-2 text-right">
+            &euro;@total.ToString("#.00")
+        </div>
+        <div class="col-lg-1"></div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12">
+            <hr />
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-12 text-right">
+            <button type="button" class="btn btn-primary" disabled>
+                Order now! <span class="glyphicon glyphicon-ok"></span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp1.1</TargetFramework>
+    <RootNamespace>KeesTalksTech.Assessments.Wehkamp.Store.UnsplashCatalogGenerator</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="unsplasharp.api" Version="0.5.7" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Domain\KeesTalksTech.Assessments.Wehkamp.Store.UnsplashCatalog\KeesTalksTech.Assessments.Wehkamp.Store.UnsplashCatalog.csproj" />
+    <ProjectReference Include="..\..\Utilities\KeesTalksTech.Assessments.Wehkamp.Store.Utilities\KeesTalksTech.Assessments.Wehkamp.Store.Utilities.csproj" />
+  </ItemGroup>
+
+</Project>

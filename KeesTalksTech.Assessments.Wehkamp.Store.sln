@@ -1,0 +1,114 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.26730.15
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{34633FC4-90A3-46BE-8ABF-38D5DD6F609B}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Applications", "Applications", "{AC3F10C7-0AEE-4892-91CA-E87364AC54B1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Utilities", "Utilities", "{F0C487A8-3A8D-41DA-B2C1-EE8439D8FAE3}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{2E1294D5-7414-4289-9B32-86E8108715E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{DB6C23B9-87B7-40C9-872E-42C2EEE13D05}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KeesTalksTech.Assessments.Wehkamp.Store.Shopping.Tests", "Tests\KeesTalksTech.Assessments.Wehkamp.Store.Shopping.Tests\KeesTalksTech.Assessments.Wehkamp.Store.Shopping.Tests.csproj", "{48F515A2-7BDE-4AA6-A39A-C2E0D3378409}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KeesTalksTech.Assessments.Wehkamp.Store.StoreApi.Tests", "Tests\KeesTalksTech.Assessments.Wehkamp.Store.StoreApi.Tests\KeesTalksTech.Assessments.Wehkamp.Store.StoreApi.Tests.csproj", "{E14426B6-7EDE-4217-9E12-07CA83FF73BC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KeesTalksTech.Assessments.Wehkamp.Store.UnsplashCatalog.Tests", "Tests\KeesTalksTech.Assessments.Wehkamp.Store.UnsplashCatalog.Tests\KeesTalksTech.Assessments.Wehkamp.Store.UnsplashCatalog.Tests.csproj", "{3FD7F89E-1DCE-4562-9E3E-46B9EF794444}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KeesTalksTech.Assessments.Wehkamp.Store.Utilities", "Utilities\KeesTalksTech.Assessments.Wehkamp.Store.Utilities\KeesTalksTech.Assessments.Wehkamp.Store.Utilities.csproj", "{7FF273E5-CEF3-434D-9F3A-B76A8B500001}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KeesTalksTech.Assessments.Wehkamp.Store.StoreApiClient", "Infrastructure\KeesTalksTech.Assessments.Wehkamp.Store.StoreApiClient\KeesTalksTech.Assessments.Wehkamp.Store.StoreApiClient.csproj", "{B2BCC064-692E-4BFD-8D3D-DCC3968CF86B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KeesTalksTech.Assessments.Wehkamp.Store.StoreApi", "Applications\KeesTalksTech.Assessments.Wehkamp.Store.StoreApi\KeesTalksTech.Assessments.Wehkamp.Store.StoreApi.csproj", "{97CDAA96-7BF1-4D85-93D4-26D08AA2D742}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KeesTalksTech.Assessments.Wehkamp.Store.UnsplashCatalogGenerator", "Applications\KeesTalksTech.Assessments.Wehkamp.Store.UnsplashCatalogGenerator\KeesTalksTech.Assessments.Wehkamp.Store.UnsplashCatalogGenerator.csproj", "{CAC105D9-A45B-4750-8253-E27E76BBB87E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KeesTalksTech.Assessments.Wehkamp.Store.WebApp", "Applications\KeesTalksTech.Assessments.Wehkamp.Store.WebApp\KeesTalksTech.Assessments.Wehkamp.Store.WebApp.csproj", "{FE6547AA-F43A-44EA-938B-9AB6F2C2DD0A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KeesTalksTech.Assessments.Wehkamp.Store.Core", "Domain\KeesTalksTech.Assessments.Wehkamp.Store.Core\KeesTalksTech.Assessments.Wehkamp.Store.Core.csproj", "{C8308EC3-7153-41B1-BDBE-E9CB9ABB98EC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KeesTalksTech.Assessments.Wehkamp.Store.Shopping", "Domain\KeesTalksTech.Assessments.Wehkamp.Store.Shopping\KeesTalksTech.Assessments.Wehkamp.Store.Shopping.csproj", "{66EDC067-CA55-4461-8DCC-D4437A5F5FFF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KeesTalksTech.Assessments.Wehkamp.Store.UnsplashCatalog", "Domain\KeesTalksTech.Assessments.Wehkamp.Store.UnsplashCatalog\KeesTalksTech.Assessments.Wehkamp.Store.UnsplashCatalog.csproj", "{DABF26B6-56F5-4802-9047-46226F9AC012}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4F29D169-2A6F-40F2-887C-E00B34A98B86}"
+	ProjectSection(SolutionItems) = preProject
+		.gitignore = .gitignore
+		LICENSE = LICENSE
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{48F515A2-7BDE-4AA6-A39A-C2E0D3378409}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{48F515A2-7BDE-4AA6-A39A-C2E0D3378409}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{48F515A2-7BDE-4AA6-A39A-C2E0D3378409}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{48F515A2-7BDE-4AA6-A39A-C2E0D3378409}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E14426B6-7EDE-4217-9E12-07CA83FF73BC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E14426B6-7EDE-4217-9E12-07CA83FF73BC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E14426B6-7EDE-4217-9E12-07CA83FF73BC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E14426B6-7EDE-4217-9E12-07CA83FF73BC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3FD7F89E-1DCE-4562-9E3E-46B9EF794444}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3FD7F89E-1DCE-4562-9E3E-46B9EF794444}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3FD7F89E-1DCE-4562-9E3E-46B9EF794444}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3FD7F89E-1DCE-4562-9E3E-46B9EF794444}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7FF273E5-CEF3-434D-9F3A-B76A8B500001}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7FF273E5-CEF3-434D-9F3A-B76A8B500001}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7FF273E5-CEF3-434D-9F3A-B76A8B500001}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7FF273E5-CEF3-434D-9F3A-B76A8B500001}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B2BCC064-692E-4BFD-8D3D-DCC3968CF86B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B2BCC064-692E-4BFD-8D3D-DCC3968CF86B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B2BCC064-692E-4BFD-8D3D-DCC3968CF86B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B2BCC064-692E-4BFD-8D3D-DCC3968CF86B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{97CDAA96-7BF1-4D85-93D4-26D08AA2D742}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{97CDAA96-7BF1-4D85-93D4-26D08AA2D742}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{97CDAA96-7BF1-4D85-93D4-26D08AA2D742}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{97CDAA96-7BF1-4D85-93D4-26D08AA2D742}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAC105D9-A45B-4750-8253-E27E76BBB87E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAC105D9-A45B-4750-8253-E27E76BBB87E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAC105D9-A45B-4750-8253-E27E76BBB87E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAC105D9-A45B-4750-8253-E27E76BBB87E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FE6547AA-F43A-44EA-938B-9AB6F2C2DD0A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE6547AA-F43A-44EA-938B-9AB6F2C2DD0A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE6547AA-F43A-44EA-938B-9AB6F2C2DD0A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE6547AA-F43A-44EA-938B-9AB6F2C2DD0A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8308EC3-7153-41B1-BDBE-E9CB9ABB98EC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8308EC3-7153-41B1-BDBE-E9CB9ABB98EC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8308EC3-7153-41B1-BDBE-E9CB9ABB98EC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8308EC3-7153-41B1-BDBE-E9CB9ABB98EC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66EDC067-CA55-4461-8DCC-D4437A5F5FFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66EDC067-CA55-4461-8DCC-D4437A5F5FFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66EDC067-CA55-4461-8DCC-D4437A5F5FFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66EDC067-CA55-4461-8DCC-D4437A5F5FFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DABF26B6-56F5-4802-9047-46226F9AC012}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DABF26B6-56F5-4802-9047-46226F9AC012}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DABF26B6-56F5-4802-9047-46226F9AC012}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DABF26B6-56F5-4802-9047-46226F9AC012}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{48F515A2-7BDE-4AA6-A39A-C2E0D3378409} = {DB6C23B9-87B7-40C9-872E-42C2EEE13D05}
+		{E14426B6-7EDE-4217-9E12-07CA83FF73BC} = {DB6C23B9-87B7-40C9-872E-42C2EEE13D05}
+		{3FD7F89E-1DCE-4562-9E3E-46B9EF794444} = {DB6C23B9-87B7-40C9-872E-42C2EEE13D05}
+		{7FF273E5-CEF3-434D-9F3A-B76A8B500001} = {F0C487A8-3A8D-41DA-B2C1-EE8439D8FAE3}
+		{B2BCC064-692E-4BFD-8D3D-DCC3968CF86B} = {2E1294D5-7414-4289-9B32-86E8108715E8}
+		{97CDAA96-7BF1-4D85-93D4-26D08AA2D742} = {AC3F10C7-0AEE-4892-91CA-E87364AC54B1}
+		{CAC105D9-A45B-4750-8253-E27E76BBB87E} = {AC3F10C7-0AEE-4892-91CA-E87364AC54B1}
+		{FE6547AA-F43A-44EA-938B-9AB6F2C2DD0A} = {AC3F10C7-0AEE-4892-91CA-E87364AC54B1}
+		{C8308EC3-7153-41B1-BDBE-E9CB9ABB98EC} = {34633FC4-90A3-46BE-8ABF-38D5DD6F609B}
+		{66EDC067-CA55-4461-8DCC-D4437A5F5FFF} = {34633FC4-90A3-46BE-8ABF-38D5DD6F609B}
+		{DABF26B6-56F5-4802-9047-46226F9AC012} = {34633FC4-90A3-46BE-8ABF-38D5DD6F609B}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {377B9C40-9981-462B-A977-65A8DFE1C43D}
+	EndGlobalSection
+EndGlobal

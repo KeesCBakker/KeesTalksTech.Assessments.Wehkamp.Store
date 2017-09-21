@@ -1,0 +1,28 @@
+﻿@model IEnumerable<KeesTalksTech.Assessments.Wehkamp.Store.StoreApi.Models.ProductModel>
+<div class="row list-row">
+    @foreach (var product in Model)
+    {
+        <article class="col-xs-6 col-sm-4 col-md-3 list-row-item">
+            <div class="thumbnail">
+                <a asp-controller="Products" asp-action="Detail" asp-route-id="@product.Id">
+                    <img src="@product.ThumbnailUrl" data-holder-rendered="true">
+                </a>
+                <div class="caption">
+                    <a asp-controller="Products" asp-action="Detail" asp-route-id="@product.Id">
+                        <h4 class="thumbnail-label">@product.Name</h4>
+                    </a>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <form asp-controller="basket" asp-action="AddToBasket" asp-route-productId="@product.Id" asp-route-amount="1" method="post" >
+                                <button type="submit" class="btn btn-default">
+                                    <span class="glyphicon glyphicon-shopping-cart"></span>
+                                </button>
+                            </form>
+                        </div>
+                        <div class="col-lg-6 text-right">&euro;@product.Price.Amount.ToString("#.00")</div>
+                    </div>
+                </div>
+            </div>
+        </article>
+    }
+</div>
