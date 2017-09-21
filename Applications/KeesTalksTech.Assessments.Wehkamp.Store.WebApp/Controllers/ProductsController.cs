@@ -1,6 +1,7 @@
 ﻿using KeesTalksTech.Assessments.Wehkamp.Store.StoreApiClient;
 using Microsoft.AspNetCore.Mvc;
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace KeesTalksTech.Assessments.Wehkamp.Store.WebApp.Controllers
@@ -19,7 +20,14 @@ namespace KeesTalksTech.Assessments.Wehkamp.Store.WebApp.Controllers
         public async Task<IActionResult> Index()
         {
             var data = await _client.Products.RandomAsync(4 * 5);
-            return View(data);
+            var list = data.ToList();
+
+            if(list.Count == 0)
+            {
+                return View("InvalidConfiguration");
+            }
+
+            return View(list);
         }
 
         [HttpGet("/p/d/{id}"), HttpGet("Detail/{id}")]

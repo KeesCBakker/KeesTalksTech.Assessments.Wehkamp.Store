@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "Invalid Configuration";
+}
+
+
+@section PageHeader {
+    <div class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="text-center">Whoops! Something is wrong.</h1>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-12">
+                </div>
+            </div>
+            </div>
+        </div>
+    }
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <p>Make sure that the following is set correctly:</p>
+        <ul>
+            <li><code>appsettings.json</code> must have <code>"StoreSdkClient.BaseUrl": "http://localhost:8285/"</code>.</li>
+            <li>API must be running on port <code>8285</code>.</li>
+            <li>A <code>products.xml</code> must be present in data directory of the API.</li>
+            <li>There must be at least 1 product.</li>
+        </ul>
+    </div>
+</div>
