@@ -42,16 +42,11 @@ namespace KeesTalksTech.Assessments.Wehkamp.Store.WebApp.Controllers
                 .Contents
                 .FirstOrDefault(c => c.Id == basketItemId);
 
-            //only create the item if not present
-            if (item == null)
+            //only remove the item if present
+            if (item != null)
             {
-                return NotFound();
+                await _client.Baskets.RemoveBasketItemAsync(basket.Id, basketItemId);
             }
-
-            await _client.Baskets.RemoveBasketItemAsync(basket.Id, basketItemId);
-
-            //remove it
-            basket.Contents.Remove(item);
 
             return RedirectToAction("Index", "Basket");
         }

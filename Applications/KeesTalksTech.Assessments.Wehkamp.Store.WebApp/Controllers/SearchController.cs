@@ -15,8 +15,13 @@ namespace KeesTalksTech.Assessments.Wehkamp.Store.WebApp.Controllers
             _client = client ?? throw new ArgumentNullException(nameof(client));
         }
         
-        public async Task<IActionResult> Index(string query)
+        public async Task<IActionResult> Index(string query = null)
         {
+            if (String.IsNullOrEmpty(query))
+            {
+                return await NothingFound();
+            }
+
             ViewBag.Query = query;
 
             var result = await _client.Products.SearchAsync(query, 1, 4 * 5);
@@ -24,22 +29,23 @@ namespace KeesTalksTech.Assessments.Wehkamp.Store.WebApp.Controllers
 
             if(list.Count == 0)
             {
-                var random = await _client.Products.RandomAsync(1);
-                if(random != null)
-                {
-                    ViewBag.Suggestions = random.FirstOrDefault()?.Keywords;
-                }
-
-
-                return View("Nada");
+                return await NothingFound();
             }
 
             return View(list);
         }
 
-        public IActionResult NothingFound()
+        [NonAction]
+        public async Task<IActionResult> NothingFound()
         {
-            return View();
+            var random = await _client.Products.RandomAsync(1);
+            if (random != null)
+            {
+                ViewBag.Suggestions = random.FirstOrDefault()?.Keywords;
+            }
+
+
+            return View("Nada");
         }
     }
 }
