@@ -27,7 +27,7 @@
         <div class="col-lg-2">
             <div class="thumbnail">
                 <a asp-controller="Products" asp-action="Detail" asp-route-id="@item.Content.Id">
-                    <img src="@item.Content.ThumbnailUrl" style="max-width:100%;" data-holder-rendered="true">
+                    <img src="@item.Content.ThumbnailUrl" style="max-width:100%;" data-holder-rendered="true" onerror="this.onerror = null; this.src='/images/backup/@(item.Content.Id)_tn.jpg'"/>
                 </a>
             </div>
         </div>

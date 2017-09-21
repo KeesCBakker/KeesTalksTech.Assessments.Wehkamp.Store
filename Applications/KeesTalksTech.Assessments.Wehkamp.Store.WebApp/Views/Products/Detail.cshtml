@@ -19,7 +19,7 @@
 <div class="row">
     <div class="col-sm-3 col-lg-6">
         <div class="thumbnail">
-            <img src="@Model.PictureUrl" data-holder-rendered="true" style="display: block;">
+            <img src="@Model.PictureUrl" data-holder-rendered="true" style="display: block;" onerror="this.onerror = null; this.src='/images/backup/@(Model.Id).jpg'" />
         </div>
     </div>
     <div class="col-sm-9 col-lg-6 col-details">

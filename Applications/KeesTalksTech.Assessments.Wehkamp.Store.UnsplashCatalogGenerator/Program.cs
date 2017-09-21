@@ -5,6 +5,8 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net.Http;
+using System.Threading.Tasks;
 using Unsplasharp;
 using Unsplasharp.Models;
 
@@ -16,11 +18,12 @@ namespace KeesTalksTech.Assessments.Wehkamp.Store.UnsplashCatalogGenerator
 
         static void Main(string[] args)
         {
-            var key = "b698bd6365f99a2d28ff5f2953d9de804742cf47baccb1890719397253564652";
+            //var key = "b698bd6365f99a2d28ff5f2953d9de804742cf47baccb1890719397253564652";
             //var key = "e5457c652514029496f7eda5d48fbad171d94b74747f59bc2f592e1a4adc762a";
             //var key = "07fbb153f650b9a882fd916f59d3b84c694b3f6457174cdab8e3470f380c4e7c";
-            //var key = "1c8949783fd75ec3a72bbcc3a668eb378f780292c04fd5803d305076dc080036";
+            var key = "1c8949783fd75ec3a72bbcc3a668eb378f780292c04fd5803d305076dc080036";
             var destination = @"..\KeesTalksTech.Assessments.Wehkamp.Store.StoreApi\data\products.xml";
+            var imagesBackup = @"..\KeesTalksTech.Assessments.Wehkamp.Store.WebApp\wwwroot\images\backup\";
 
             var client = new UnsplasharpClient(key);
             var randomizer = new Random();
@@ -34,7 +37,7 @@ namespace KeesTalksTech.Assessments.Wehkamp.Store.UnsplashCatalogGenerator
                     "lights", "cloths", "Berlin", "Paris", "computer", "phone",
                     "building", "food", "love", "smile", "music",
                     "animal", "car", "sports", "bird", "Beauty",
-                    "model", "tools", "working", "wild", "water", "portrait",
+                    "fashion", "tools", "working", "wild", "water", "portrait",
                     "winter", "summer"};
 
             foreach (var keyword in keywords)
@@ -53,6 +56,7 @@ namespace KeesTalksTech.Assessments.Wehkamp.Store.UnsplashCatalogGenerator
                 var processed = photos
                     //skip photos without a description
                     .Where(p => !String.IsNullOrEmpty(p.Description))
+                    .Where(p => products.FirstOrDefault(p2 =>p2.Id== p.Id) == null)
                     .Select(p => new PhotoProduct
                     {
                         Id = p.Id,
@@ -83,6 +87,21 @@ namespace KeesTalksTech.Assessments.Wehkamp.Store.UnsplashCatalogGenerator
             path = Path.Combine(path, destination);
 
             XmlSerializationHelper.SerializeToFile(path, products);
+
+            Console.WriteLine();
+            Console.WriteLine("Downloading backup images...");
+
+            Directory.CreateDirectory(imagesBackup);
+            using (var downloader = new HttpClient())
+            {
+                products.ForEach(p =>
+                {
+                    Console.WriteLine("Downloading " + p.Id);
+                    var s1 = DownloadFile(downloader, p.ThumbnailUrl, Path.Combine(imagesBackup, p.Id + "_tn.jpg")).Result;
+                    var s2 = DownloadFile(downloader, p.PictureUrl, Path.Combine(imagesBackup, p.Id + ".jpg")).Result;
+                });
+            }
+
 
             Console.WriteLine();
             Console.WriteLine("Ready!");
@@ -118,6 +137,24 @@ namespace KeesTalksTech.Assessments.Wehkamp.Store.UnsplashCatalogGenerator
             list.Add($"{photo.Height}x{photo.Width}");
 
             return list.ToArray();
+        }
+
+        private static async Task<bool> DownloadFile(HttpClient client, string url, string destination)
+        {
+
+            var response = await client.GetAsync(url);
+
+            if (File.Exists(destination))
+            {
+                File.Delete(destination);
+            }
+
+            using (var fs = new FileStream(destination, FileMode.Create))
+            {
+                await response.Content.ReadAsStreamAsync().Result.CopyToAsync(fs);
+            }
+
+            return true;
         }
     }
 }
