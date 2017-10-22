@@ -5,7 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Utilities\KeesTalksTech.Assessments.Wehkamp.Store.Utilities\KeesTalksTech.Assessments.Wehkamp.Store.Utilities.csproj" />
     <ProjectReference Include="..\KeesTalksTech.Assessments.Wehkamp.Store.Core\KeesTalksTech.Assessments.Wehkamp.Store.Core.csproj" />
   </ItemGroup>
 

@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Applications\KeesTalksTech.Assessments.Wehkamp.Store.UnsplashCatalogGenerator\KeesTalksTech.Assessments.Wehkamp.Store.UnsplashCatalogGenerator.csproj" />
+    <ProjectReference Include="..\..\Domain\KeesTalksTech.Assessments.Wehkamp.Store.UnsplashCatalog\KeesTalksTech.Assessments.Wehkamp.Store.UnsplashCatalog.csproj" />
   </ItemGroup>
 
   <ItemGroup>
