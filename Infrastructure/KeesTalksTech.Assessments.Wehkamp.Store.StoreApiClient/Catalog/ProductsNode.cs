@@ -1,7 +1,6 @@
 ﻿using KeesTalksTech.Assessments.Wehkamp.Store.StoreApi.Models;
-using KeesTalksTech.Assessments.Wehkamp.Store.StoreApiClient.Rest;
-using RestSharp;
-using System;
+using RestSharp.Portable;
+using RestSharp.Portable.HttpClient;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -22,7 +21,9 @@ namespace KeesTalksTech.Assessments.Wehkamp.Store.StoreApiClient.Catalog
             var request = new RestRequest("/api/products/{id}", Method.GET);
                 request.AddUrlSegment("id", id);
 
-            return await client.ExecuteAsync<ProductModel>(request);
+            var result = await client.Execute<ProductModel>(request);
+
+            return result.Data;
         }
 
         public async Task<IEnumerable< ProductModel>> GetAllAsync(uint page, uint pageSize)
@@ -32,7 +33,9 @@ namespace KeesTalksTech.Assessments.Wehkamp.Store.StoreApiClient.Catalog
                 request.AddUrlSegment("page", page);
                 request.AddUrlSegment("pageSize", pageSize);
 
-            return await client.ExecuteAsync<List<ProductModel>>(request);
+            var result = await client.Execute<List<ProductModel>>(request);
+
+            return result.Data; 
         }
 
         public async Task<IEnumerable<ProductModel>> SearchAsync(string search, uint page, uint pageSize)
@@ -43,7 +46,9 @@ namespace KeesTalksTech.Assessments.Wehkamp.Store.StoreApiClient.Catalog
                 request.AddUrlSegment("page", page);
                 request.AddUrlSegment("pageSize", pageSize);
 
-            return await client.ExecuteAsync<List<ProductModel>>(request);
+            var result =  await client.Execute<List<ProductModel>>(request);
+
+            return result.Data;
         }
 
         public async Task<IEnumerable<ProductModel>> RandomAsync(uint count)
@@ -52,7 +57,9 @@ namespace KeesTalksTech.Assessments.Wehkamp.Store.StoreApiClient.Catalog
             var request = new RestRequest("/api/products/random?count={count}", Method.GET);
             request.AddUrlSegment("count", count);
 
-            return await client.ExecuteAsync<List<ProductModel>>(request);
+            var result = await client.Execute<List<ProductModel>>(request);
+
+            return result.Data;
         }
     }
 }

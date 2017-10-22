@@ -1,6 +1,7 @@
 ﻿using KeesTalksTech.Assessments.Wehkamp.Store.StoreApi.Models;
-using KeesTalksTech.Assessments.Wehkamp.Store.StoreApiClient.Rest;
 using RestSharp;
+using RestSharp.Portable;
+using RestSharp.Portable.HttpClient;
 using System;
 using System.Threading.Tasks;
 
@@ -21,7 +22,9 @@ namespace KeesTalksTech.Assessments.Wehkamp.Store.StoreApiClient.Shopping
             var request = new RestRequest("/api/baskets/{id}", Method.GET);
             request.AddUrlSegment("id", id);
 
-            return await client.ExecuteAsync<BasketModel>(request);
+            var result =  await client.Execute<BasketModel>(request);
+
+            return result.Data;
         }
 
         public async Task<BasketModel> CreateAsync()
@@ -29,7 +32,9 @@ namespace KeesTalksTech.Assessments.Wehkamp.Store.StoreApiClient.Shopping
             var client = new RestClient(_settings.BaseUrl);
             var request = new RestRequest("/api/baskets", Method.PUT);
 
-            return await client.ExecuteAsync<BasketModel>(request);
+            var result = await client.Execute<BasketModel>(request);
+
+            return result.Data;
         }
 
         public async Task<BasketItemModel> AddToBasketAsync(string basktetId, string productId, uint amount)
@@ -43,7 +48,9 @@ namespace KeesTalksTech.Assessments.Wehkamp.Store.StoreApiClient.Shopping
                 amount = amount
             });
 
-            return await client.ExecuteAsync<BasketItemModel>(request);
+            var result = await client.Execute<BasketItemModel>(request);
+
+            return result.Data;
         }
 
         public async Task<bool> RemoveBasketItemAsync(string basktetId, string basketItemId)
@@ -53,7 +60,9 @@ namespace KeesTalksTech.Assessments.Wehkamp.Store.StoreApiClient.Shopping
             request.AddUrlSegment("basktetId", basktetId);
             request.AddUrlSegment("basketItemId", basketItemId);
 
-            return await client.ExecuteAsync(request);
+            var result = await client.Execute(request);
+
+            return true;
         }
     }
 }
