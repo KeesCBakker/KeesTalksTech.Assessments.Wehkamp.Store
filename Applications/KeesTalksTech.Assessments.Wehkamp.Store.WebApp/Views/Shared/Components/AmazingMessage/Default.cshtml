@@ -1,0 +1,21 @@
+﻿@model string
+<h3 class="alert alert-success">@Model</h3>
+
+<table>
+    <tr>
+        <td>Machine name: </td>
+        <td>@System.Environment.MachineName</td>
+    </tr>
+    <tr>
+        <td>Framework software: </td>
+        <td>@System.Runtime.InteropServices.RuntimeInformation.FrameworkDescription</td>
+    </tr>
+
+    @foreach (var feature in Context.Features)
+    {
+        <tr>
+            <td>@feature.Key: </td>
+            <td>@feature.Value</td>
+        </tr>
+    }
+</table>

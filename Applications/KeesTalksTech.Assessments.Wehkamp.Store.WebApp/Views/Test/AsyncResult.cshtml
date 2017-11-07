@@ -1,0 +1,21 @@
+﻿@{
+    ViewData["Title"] = $"Testing async view component";
+}
+
+@section PageHeader {
+    <div class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="text-center">@ViewData["Title"]</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<div class="row">
+    <div class="col-lg-12">
+        @await Component.InvokeAsync("AmazingMessage", new { text = "Hello World!", wait =  5000 })
+    </div>
+</div>

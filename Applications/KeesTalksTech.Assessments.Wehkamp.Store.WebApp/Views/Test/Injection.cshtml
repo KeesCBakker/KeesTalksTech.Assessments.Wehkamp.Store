@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = $"Testing Injection";
+}
+
+
+
+@section PageHeader {
+    <div class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="text-center">@ViewData["Title"]</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<div class="row">
+    <div class="col-lg-12">
+       <ul>
+           <li>@Kees.SaySomething()</li>
+           <li>@Kees.SaySomething("Hi")</li>
+           <li>@Kees.SaySomething("Hello", "World")</li>
+       </ul>
+    </div>
+</div>

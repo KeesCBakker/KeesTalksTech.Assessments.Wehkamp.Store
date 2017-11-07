@@ -1,14 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using KeesTalksTech.Assessments.Wehkamp.Store.StoreApiClient;
 using KeesTalksTech.Assessments.Wehkamp.Store.WebApp.Configuration;
+using KeesTalksTech.Assessments.Wehkamp.Store.WebApp.Helpers;
 
 namespace KeesTalksTech.Assessments.Wehkamp.Store.WebApp
 {
@@ -38,6 +35,10 @@ namespace KeesTalksTech.Assessments.Wehkamp.Store.WebApp
                 var sdkClient = new StoreSdkClient(sdkClientSettings);
                 return sdkClient;
             });
+
+            //add URL builder
+            services.AddSingleton<IComposer, ComposerImplementationUpperCase>();
+            services.AddSingleton<MyComponent, MyComponent>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
